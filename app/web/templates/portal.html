@@ -15,17 +15,27 @@
       <a href="/portal/audit" data-nav="audit">Audit Log</a>
     </nav>
     <div class="stack tenant-tools">
-      <label>Tenant<select id="tenant-select"></select></label>
-      <label>Project<select id="project-select"></select></label>
-      <button class="secondary" id="logout-btn">Logout</button>
+      <label>Tenant Workspace<select id="tenant-select"></select></label>
+      <label>Project Context<select id="project-select"></select></label>
+      <button class="secondary" id="logout-btn">Sign Out</button>
       <small id="context-status"></small>
     </div>
   </aside>
 
   <section class="workspace">
     <header class="topbar">
-      <h2 id="screen-title">{{ screen|capitalize }}</h2>
+      <div class="topbar-main">
+        <div class="crumb-row">
+          <button class="secondary" type="button" id="back-btn">Back</button>
+          <nav id="breadcrumbs" class="breadcrumbs" aria-label="Breadcrumb"></nav>
+        </div>
+        <h2 id="screen-title">{{ screen|capitalize }}</h2>
+        <p id="screen-subtitle" class="screen-subtitle"></p>
+      </div>
       <div class="top-actions">
+        <a class="secondary action-link" href="/portal/dashboard">Dashboard</a>
+        <a class="secondary action-link" id="screen-prev-link" href="/portal/dashboard">Previous</a>
+        <a class="action-link" id="screen-next-link" href="/portal/documents">Next</a>
         <button id="refresh-screen">Refresh</button>
       </div>
     </header>

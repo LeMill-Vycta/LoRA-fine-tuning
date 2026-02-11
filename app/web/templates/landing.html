@@ -2,55 +2,59 @@
 {% block content %}
 <main class="landing-shell">
   <section class="hero-card">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>LoRA Studio</span>
+    </nav>
     <p class="eyebrow">LoRA Fine-Tuning for Niche Expertise</p>
     <h1>LoRA Studio</h1>
     <p class="hero-copy">
-      Turn client documents into a versioned adapter, eval report, and deployable inference package with full audit lineage.
+      Turn client documents into a versioned adapter, evaluation report, and deployable inference package with full audit lineage.
     </p>
     <div class="grid">
       <article>
-        <h3>1. Onboard docs</h3>
-        <p>Upload PDFs/DOCX/TXT/CSV, dedupe, score quality, detect PII.</p>
+        <h3>1. Onboard Documents</h3>
+        <p>Upload PDFs, DOCX, TXT, markdown, and CSV. Detect duplicates, score quality, and flag PII.</p>
       </article>
       <article>
-        <h3>2. Build dataset</h3>
-        <p>Generate instruction data, split by document, preserve gold eval set.</p>
+        <h3>2. Build Training Dataset</h3>
+        <p>Create instruction examples, split by document, and preserve a strict gold evaluation set.</p>
       </article>
       <article>
-        <h3>3. Train + evaluate</h3>
-        <p>VRAM-safe LoRA orchestration for RTX 4060 class hardware.</p>
+        <h3>3. Train and Evaluate</h3>
+        <p>Run VRAM-safe LoRA orchestration for RTX 4060 class hardware and compare against prior versions.</p>
       </article>
       <article>
-        <h3>4. Deploy</h3>
-        <p>Activate adapter versions and serve tenant-isolated inference.</p>
+        <h3>4. Deploy Safely</h3>
+        <p>Activate adapter versions and serve tenant-isolated inference with audit-ready traceability.</p>
       </article>
     </div>
   </section>
 
-  <section class="auth-card">
+  <section class="auth-card" id="auth-panels">
     <h2>Sign In</h2>
     <form id="login-form" class="stack">
-      <label>Email<input type="email" name="email" required /></label>
+      <label>Email Address<input type="email" name="email" required /></label>
       <label>Password<input type="password" name="password" required /></label>
-      <button type="submit">Login</button>
+      <button type="submit">Sign In</button>
     </form>
 
     <h2>Create Account</h2>
     <form id="register-form" class="stack">
-      <label>Email<input type="email" name="email" required /></label>
+      <label>Work Email<input type="email" name="email" required /></label>
       <label>Password<input type="password" name="password" minlength="8" required /></label>
-      <button type="submit">Register</button>
+      <button type="submit">Create Account</button>
     </form>
 
-    <h2>Create Tenant</h2>
+    <h2>Create Tenant Workspace</h2>
     <form id="tenant-form" class="stack">
-      <label>Name<input name="name" required /></label>
-      <label>Namespace<input name="namespace" required /></label>
-      <button type="submit">Create Tenant</button>
+      <label>Tenant Name<input name="name" required /></label>
+      <label>Namespace (URL-safe)<input name="namespace" required /></label>
+      <button type="submit">Create Workspace</button>
     </form>
 
     <p class="status" id="auth-status"></p>
-    <a class="go-link" href="/portal/dashboard">Open Portal</a>
+    <a class="go-link" href="/portal/dashboard">Open Portal Dashboard</a>
   </section>
 </main>
 {% endblock %}
