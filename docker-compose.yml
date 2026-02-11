@@ -1,0 +1,10 @@
+﻿services:
+  lora-studio:
+    build: .
+    container_name: lora-studio
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data

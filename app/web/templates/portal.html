@@ -1,0 +1,37 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<main class="portal-shell">
+  <aside class="sidebar">
+    <h1>LoRA Studio</h1>
+    <p class="mono">Production pipeline for adapter training</p>
+    <p class="mono" id="session-user">Not signed in</p>
+    <nav>
+      <a href="/portal/dashboard" data-nav="dashboard">Dashboard</a>
+      <a href="/portal/documents" data-nav="documents">Documents</a>
+      <a href="/portal/datasets" data-nav="datasets">Dataset Builder</a>
+      <a href="/portal/training" data-nav="training">Training Runs</a>
+      <a href="/portal/evaluation" data-nav="evaluation">Evaluation</a>
+      <a href="/portal/deploy" data-nav="deploy">Deploy</a>
+      <a href="/portal/audit" data-nav="audit">Audit Log</a>
+    </nav>
+    <div class="stack tenant-tools">
+      <label>Tenant<select id="tenant-select"></select></label>
+      <label>Project<select id="project-select"></select></label>
+      <button class="secondary" id="logout-btn">Logout</button>
+      <small id="context-status"></small>
+    </div>
+  </aside>
+
+  <section class="workspace">
+    <header class="topbar">
+      <h2 id="screen-title">{{ screen|capitalize }}</h2>
+      <div class="top-actions">
+        <button id="refresh-screen">Refresh</button>
+      </div>
+    </header>
+
+    <div id="screen-content" class="content-card"></div>
+  </section>
+</main>
+{% endblock %}
+

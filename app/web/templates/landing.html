@@ -1,0 +1,57 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<main class="landing-shell">
+  <section class="hero-card">
+    <p class="eyebrow">LoRA Fine-Tuning for Niche Expertise</p>
+    <h1>LoRA Studio</h1>
+    <p class="hero-copy">
+      Turn client documents into a versioned adapter, eval report, and deployable inference package with full audit lineage.
+    </p>
+    <div class="grid">
+      <article>
+        <h3>1. Onboard docs</h3>
+        <p>Upload PDFs/DOCX/TXT/CSV, dedupe, score quality, detect PII.</p>
+      </article>
+      <article>
+        <h3>2. Build dataset</h3>
+        <p>Generate instruction data, split by document, preserve gold eval set.</p>
+      </article>
+      <article>
+        <h3>3. Train + evaluate</h3>
+        <p>VRAM-safe LoRA orchestration for RTX 4060 class hardware.</p>
+      </article>
+      <article>
+        <h3>4. Deploy</h3>
+        <p>Activate adapter versions and serve tenant-isolated inference.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="auth-card">
+    <h2>Sign In</h2>
+    <form id="login-form" class="stack">
+      <label>Email<input type="email" name="email" required /></label>
+      <label>Password<input type="password" name="password" required /></label>
+      <button type="submit">Login</button>
+    </form>
+
+    <h2>Create Account</h2>
+    <form id="register-form" class="stack">
+      <label>Email<input type="email" name="email" required /></label>
+      <label>Password<input type="password" name="password" minlength="8" required /></label>
+      <button type="submit">Register</button>
+    </form>
+
+    <h2>Create Tenant</h2>
+    <form id="tenant-form" class="stack">
+      <label>Name<input name="name" required /></label>
+      <label>Namespace<input name="namespace" required /></label>
+      <button type="submit">Create Tenant</button>
+    </form>
+
+    <p class="status" id="auth-status"></p>
+    <a class="go-link" href="/portal/dashboard">Open Portal</a>
+  </section>
+</main>
+{% endblock %}
+
